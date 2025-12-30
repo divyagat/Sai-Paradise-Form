@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0b0b0b;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+}
+
+/* FORM WRAPPER */
+.form-wrapper {
+  max-width: 460px;
+  width: 100%;
+}
+
+/* FORM CARD */
+.form-card {
+  background: #111;
+  border-radius: 18px;
+  padding: 34px 30px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+}
+
+/* HEADING */
+.form-card h2 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* PHONE */
+.phone-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.country-code {
+  width: 70px;
+  text-align: center;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.phone-input {
+  flex: 1;
+}
+
+/* INPUTS */
+input,
+select {
+  width: 100%;
+  padding: 15px 16px;
+  background: #0b0b0b;
+  border: 1px solid #222;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #c9a24d;
+  box-shadow: 0 0 0 2px rgba(201,162,77,0.2);
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #c9a24d, #f1d27a);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(201,162,77,0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* MESSAGE */
+.msg {
+  margin-top: 14px;
+  font-size: 13px;
+  text-align: center;
+  color: #c9a24d;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .hero {
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 26px 22px;
+  }
+
+  .form-card h2 {
+    font-size: 22px;
+  }
+}
