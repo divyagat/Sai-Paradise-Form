@@ -36,7 +36,7 @@ export default function LeadForm() {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/leads", {
+      const res = await fetch("https://sai-paradise-form.vercel.app/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -58,78 +58,108 @@ export default function LeadForm() {
   };
 
   return (
-    <div className="hero">
-      <div className="form-wrapper">
-        <div className="form-card">
-          <h2>Register Your Interest</h2>
 
-          <form onSubmit={submitHandler}>
-            {/* NAME + EMAIL */}
-            <div className="grid">
-              <input
-                name="full_name"
-                placeholder="Full Name *"
-                required
-              />
-              <input
-                name="email"
-                placeholder="Email"
-                type="email"
-              />
-            </div>
 
-            {/* PHONE */}
-            <div className="phone-row">
-              <input
-                name="country_code"
-                value="+91"
-                readOnly
-                className="country-code"
-              />
-              <input
-                name="phone"
-                placeholder="Phone Number *"
-                required
-                pattern="[0-9]{10}"
-                maxLength={10}
-                className="phone-input"
-              />
-            </div>
 
-            {/* PROJECT */}
-            <select name="project" required>
-              <option value="">Select Project *</option>
-              {projects.map((p, i) => (
-                <option key={i} value={p}>{p}</option>
-              ))}
-            </select>
 
-            {/* BHK */}
-            <select name="bhk" required>
-              <option value="">Interested In *</option>
-              <option value="1 BHK">1 BHK</option>
-              <option value="2 BHK">2 BHK</option>
-              <option value="3 BHK">3 BHK</option>
-              <option value="4 BHK">4 BHK</option>
-            </select>
+    <>
 
-            {/* BUDGET */}
-            <select name="budget" required>
-              <option value="">Budget *</option>
-              <option value="₹50L – ₹75L">₹50L – ₹75L</option>
-              <option value="₹75L – ₹1Cr">₹75L – ₹1Cr</option>
-              <option value="₹1Cr+">₹1Cr+</option>
-              <option value="Not Decided">Not Decided</option>
-            </select>
 
-            <button className="submit-btn" disabled={loading}>
-              {loading ? "Submitting..." : "Submit"}
-            </button>
 
-            {msg && <p className="msg">{msg}</p>}
-          </form>
+
+
+
+      <div className="hero">
+        <div className="form-wrapper">
+
+
+
+          <div
+            className="company-name"
+            style={{
+              color: "white",
+              fontSize: "30px",
+              marginBottom: "10px",
+              width: "800px",
+              // textAlign: "center",
+            }}
+          >
+            Paradise Group
+          </div>
+
+
+          <div className="form-card">
+            <h2>Register Your Interest</h2>
+
+            <form onSubmit={submitHandler}>
+              {/* NAME + EMAIL */}
+              <div className="grid">
+                <input
+                  name="full_name"
+                  placeholder="Full Name *"
+                  required
+                />
+                <input
+                  name="email"
+                  placeholder="Email"
+                  type="email"
+                />
+              </div>
+
+              {/* PHONE */}
+              <div className="phone-row">
+                <input
+                  name="country_code"
+                  value="+91"
+                  readOnly
+                  className="country-code"
+                />
+                <input
+                  name="phone"
+                  placeholder="Phone Number *"
+                  required
+                  pattern="[0-9]{10}"
+                  maxLength={10}
+                  className="phone-input"
+                />
+              </div>
+
+              {/* PROJECT */}
+              <select name="project" required>
+                <option value="">Select Project *</option>
+                {projects.map((p, i) => (
+                  <option key={i} value={p}>{p}</option>
+                ))}
+              </select>
+
+              {/* BHK */}
+              <select name="bhk" required>
+                <option value="">Interested In *</option>
+                <option value="1 BHK">1 BHK</option>
+                <option value="2 BHK">2 BHK</option>
+                <option value="3 BHK">3 BHK</option>
+                <option value="4 BHK">4 BHK</option>
+              </select>
+
+              {/* BUDGET */}
+              <select name="budget" required>
+                <option value="">Budget *</option>
+                <option value="₹50L – ₹75L">₹50L – ₹75L</option>
+                <option value="₹75L – ₹1Cr">₹75L – ₹1Cr</option>
+                <option value="₹1Cr+">₹1Cr+</option>
+                <option value="Not Decided">Not Decided</option>
+              </select>
+
+              <button className="submit-btn" disabled={loading}>
+                {loading ? "Submitting..." : "Submit"}
+              </button>
+
+              {msg && <p className="msg">{msg}</p>}
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+
+    </>
   );
 }
